@@ -2,9 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('hello') {
+        stage('Build') {
             steps {
-                sh 'echo "hello world"'
+                git branch: 'main',
+                    url:'https://github.com/phanison898/aws-ci-cd-pipe-line.git'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                sshagent(['tomcat-server']) {
+                    sh "scp -o StrictHostKeyChecking=no -r /var/lib/jenkins/workspace/sample-project/src/ ec2-user@34.205.69.92:/opt/tomcat/webapps/myapp/"
+                }
             }
         }
     }
