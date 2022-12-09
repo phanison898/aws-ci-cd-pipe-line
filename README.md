@@ -55,7 +55,7 @@ sudo rm -r apache-tomcat-10.0.27.tar.gz
 sudo mv apache-tomcat-10.0.27 tomcat
 ```
 
-- Rename
+- Modify context.xml files
 
 ```bash
 #search for context.xml
@@ -66,4 +66,29 @@ find / -name context.xml
 /opt/tomcat/webapps/manager/META-INF/context.xml
 
 #go into these files using vim editor and commant the tag "Value ClassName"
+```
+
+- Add user roles in tomcat-users.xml file which available in /opt/tomcat/conf/ folder
+
+```xml
+ <role rolename="manager-gui"/>
+ <role rolename="manager-script"/>
+ <role rolename="manager-jmx"/>
+ <role rolename="manager-status"/>
+ <user username="admin" password="admin" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+ <user username="deployer" password="deployer" roles="manager-script"/>
+ <user username="tomcat" password="s3cret" roles="manager-gui"/>
+```
+
+- Create shortcut links
+
+```bash
+ln -s /opt/tomcat/bin/startup.sh /usr/local/bin/tomcatup
+ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
+```
+
+- Start Tomcat server
+
+```bash
+tomcatup
 ```
