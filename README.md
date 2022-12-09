@@ -10,6 +10,8 @@
 
 ### Setup Jenkins server
 
+- Install Jenkins
+
 ```bash
 sudo yum update -y
 
@@ -20,4 +22,11 @@ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 sudo amazon-linux-extras install java-11-openjdk
 
 sudo systemctl start jenkins
+```
+
+- Install Git
+
+```bash
+sudo yum install git
+
 ```
