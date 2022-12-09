@@ -102,7 +102,9 @@ sudo chown -R ec2-user:ec2-user /opt
 ---
 
 ### Create Jenkins Pipeline and Jenkinsfile script
-- 
+
+- Configure Git tool in jenkins global tool section
+  ![git]("https://github.com/phanison898/github-drive/blob/main/jenkins_git_global_tool_config.png")
 
 - Create **JenkinsFile**
 
