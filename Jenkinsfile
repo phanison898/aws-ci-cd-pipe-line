@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo "The current build number is ${env.BUILD_NUMBER}"
                 git branch: 'main',
                     url:'https://github.com/phanison898/aws-ci-cd-pipe-line.git'
             }
