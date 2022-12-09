@@ -10,42 +10,34 @@ pipeline {
             }
             post {
                 success {
-                    echo "Successfully cloned the repository"
+                    echo 'Successfully cloned the repository'
                 }
                 failure {
                     echo 'Failed to clone the repository'
                 }
             }
         }
-        
-        stage('Deploy to Tomcat') {
+
+        stage('Deploy to server-1') {
             steps {
-                sshagent(['tomcat-server']) {
-                    sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/sample-project/src/* ec2-user@34.205.69.92:/opt/tomcat/webapps/ROOT/"
-                }
-            }
-            post {
-                success {
-                    echo 'Successfully deployed the website in Tomcat server'
-                }
-                failure {
-                    echo 'Failed to deploy the website in Tomcat server'
+                sshagent(['aws-ec2-user']) {
+                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/sample-project/src/* ec2-user@44.204.31.39:/opt/tomcat/webapps/ROOT/'
                 }
             }
         }
-        
-        stage('Deploy to Nginx') {
+
+        stage('Deploy to server-2') {
             steps {
-                sshagent(['tomcat-server']) {
-                    sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/sample-project/src/* ec2-user@34.205.69.92:/usr/share/nginx/html/"
+                sshagent(['aws-ec2-user']) {
+                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/sample-project/src/* ec2-user@54.86.169.56/:/opt/tomcat/webapps/ROOT/'
                 }
             }
-             post {
-                success {
-                    echo 'Successfully deployed the website in Nginx server'
-                }
-                failure {
-                    echo 'Failed to deploy the website in Nginx server'
+        }
+
+        stage('Deploy to server-3') {
+            steps {
+                sshagent(['aws-ec2-user']) {
+                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/sample-project/src/* ec2-user@44.203.48.142/:/opt/tomcat/webapps/ROOT/'
                 }
             }
         }
