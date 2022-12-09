@@ -92,3 +92,11 @@ ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
 ```bash
 tomcatup
 ```
+
+- Give admin rights to **ec2-user** against /opt folder inorder to deploy files
+
+```bash
+sudo chown -R ec2-user:ec2-user /opt
+```
+
+---
