@@ -104,7 +104,7 @@ sudo chown -R ec2-user:ec2-user /opt
 ### Create Jenkins Pipeline and Jenkinsfile script
 
 - Configure Git tool in jenkins global tool section
-  ![git]("https://firebasestorage.googleapis.com/v0/b/my--drive-e7a5b.appspot.com/o/project_images%2Fjenkins_git_global_tool_config.png?alt=media&token=a23d902f-b95d-4877-917a-f297104b5c39")
+  ![git](https://firebasestorage.googleapis.com/v0/b/my--drive-e7a5b.appspot.com/o/project_images%2Fjenkins_git_global_tool_config.png?alt=media&token=a23d902f-b95d-4877-917a-f297104b5c39)
 
 - Create **JenkinsFile**
 
