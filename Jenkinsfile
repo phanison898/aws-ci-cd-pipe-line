@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy to server-1') {
             steps {
                 sshagent(['aws-ec2-user']) {
-                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/sample-project/src/* ec2-user@44.204.31.39:/opt/tomcat/webapps/ROOT/'
+                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Server-Web-App/src/* ec2-user@44.204.31.39:/opt/tomcat/webapps/ROOT/'
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
         stage('Deploy to server-2') {
             steps {
                 sshagent(['aws-ec2-user']) {
-                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/sample-project/src/* ec2-user@54.86.169.56/:/opt/tomcat/webapps/ROOT/'
+                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Server-Web-App/src/* ec2-user@54.86.169.56/:/opt/tomcat/webapps/ROOT/'
                 }
             }
         }
@@ -37,7 +37,7 @@ pipeline {
         stage('Deploy to server-3') {
             steps {
                 sshagent(['aws-ec2-user']) {
-                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/sample-project/src/* ec2-user@44.203.48.142/:/opt/tomcat/webapps/ROOT/'
+                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Multi-Server-Web-App/src/* ec2-user@44.203.48.142/:/opt/tomcat/webapps/ROOT/'
                 }
             }
         }
