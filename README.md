@@ -44,7 +44,7 @@ sudo yum install git
 ```bash
 sudo yum update -y
 
-sudo cd /opt
+cd /opt
 
 sudo wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz
 
