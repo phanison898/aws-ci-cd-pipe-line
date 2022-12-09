@@ -23,6 +23,8 @@ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
 sudo amazon-linux-extras install java-openjdk11
 
+sudo yum install jenkins
+
 sudo systemctl start jenkins
 
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword (secret key)
