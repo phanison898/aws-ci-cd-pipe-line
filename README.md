@@ -38,6 +38,10 @@ sudo yum install git
 ---
 
 ### Setup Apache Tomcat server
+- Install Java 1.8.0 openjdk
+```
+sudo yum install -i java-1.8.0-openjdk
+```
 
 - Install apache tomcat
 
