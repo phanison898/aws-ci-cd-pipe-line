@@ -104,7 +104,9 @@ sudo chown -R ec2-user:ec2-user /opt
 ### Create Jenkins Pipeline and Jenkinsfile script
 
 - Configure Git tool in jenkins global tool section
-  ![git](https://firebasestorage.googleapis.com/v0/b/my--drive-e7a5b.appspot.com/o/project_images%2Fjenkins_git_global_tool_config.png?alt=media&token=a23d902f-b95d-4877-917a-f297104b5c39)
+  ![Git Plugin](https://firebasestorage.googleapis.com/v0/b/my--drive-e7a5b.appspot.com/o/project_images%2Fjenkins_git_global_tool_config.png?alt=media&token=a23d902f-b95d-4877-917a-f297104b5c39)
+
+- Setup jenkins SSH-Agent plugin and add your AWS key-pair values -![SSH-Agent Plugin](https://firebasestorage.googleapis.com/v0/b/my--drive-e7a5b.appspot.com/o/project_images%2Fjenkins_sshagent_setup_img.png?alt=media&token=9b2a8fd6-49d7-45c2-bcdc-5eedd79f97e5)
 
 - Create **JenkinsFile**
 
