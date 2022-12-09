@@ -9,7 +9,7 @@ pipeline {
             }
             post {
                 success {
-                    echo 'Successfully cloned the repository ${env.BRANCH_NAME}'
+                    echo "Successfully cloned the repository ${env.BUILD_NUMBER}"
                 }
                 failure {
                     echo 'Failed to clone the repository'
