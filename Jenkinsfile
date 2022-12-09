@@ -1,5 +1,3 @@
-def status = true
-
 pipeline {
     agent any
 
@@ -12,29 +10,25 @@ pipeline {
             post {
                 success {
                     echo 'Successfully cloned the repository'
-                    status = false
                 }
                 failure {
-                    status = false
                     echo 'Failed to clone the repository'
                 }
             }
         }
         
         stage('Deploy to Tomcat') {
-            if(status){
-                steps {
-                    sshagent(['tomcat-server']) {
-                        sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/sample-project/src/* ec2-user@34.205.69.92:/opt/tomcat/webapps/ROOT/"
-                    }
+            steps {
+                sshagent(['tomcat-server']) {
+                    sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/sample-project/src/* ec2-user@34.205.69.92:/opt/tomcat/webapps/ROOT/"
                 }
-                post {
-                    success {
-                        echo 'Successfully deployed the website in Tomcat server'
-                    }
-                    failure {
-                        echo 'Failed to deploy the website in Tomcat server'
-                    }
+            }
+            post {
+                success {
+                    echo 'Successfully deployed the website in Tomcat server'
+                }
+                failure {
+                    echo 'Failed to deploy the website in Tomcat server'
                 }
             }
         }
