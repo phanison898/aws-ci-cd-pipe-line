@@ -1,3 +1,12 @@
+![](https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg)
+![](https://www.vectorlogo.zone/logos/ansible/ansible-icon.svg)
+![](https://www.vectorlogo.zone/logos/docker/docker-icon.svg)
+![](https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg)
+![](https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg)
+![](https://www.vectorlogo.zone/logos/nagios/nagios-icon.svg)
+![](https://www.vectorlogo.zone/logos/nginx/nginx-icon.svg)
+![](https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg)
+
 ### Objectives
 
 - [x] Create an AWS account ([watch youtube tutorial](https://www.youtube.com/watch?v=XhW17g73fvY "How to Create AWS Account Free in 5 Minutes"))
@@ -40,7 +49,9 @@ sudo yum install git
 ---
 
 ### Setup Apache Tomcat server
+
 - Install Java 1.8.0 openjdk
+
 ```
 sudo yum install -i java-1.8.0-openjdk
 ```
